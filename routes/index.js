@@ -1,9 +1,10 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
+const userRoutes = require('./userRoutes');
+const postRoutes = require('./postRoutes');
+const commentRoutes = require('./commentRoutes');
 
-// Handle GET request for the root URL
-router.get('/', (req, res) => {
-  res.render('index'); // Render the index.hbs file using Handlebars
-});
+router.use('/users', userRoutes);
+router.use('/posts', postRoutes);
+router.use('/comments', commentRoutes);
 
 module.exports = router;
