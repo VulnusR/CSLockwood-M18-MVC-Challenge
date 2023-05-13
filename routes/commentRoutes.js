@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, Post, User } = require('../../models');
+const { Comment, Post, User } = require('../models');
 
 // GET all comments
 router.get('/', async (req, res) => {
@@ -57,3 +57,51 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// Update via id
+router.put('/:id', async (req, res) => {
+    try {
+        const commentToUpdate = await Comment.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        }); 
+
+        if(!commentToUpdate[0]) {
+            res.status(400).json({ message: 'No comment associated with this ID!' });
+            return;
+        }
+
+        res.status(200).json(commentToUpdate); 
+    } 
+    
+    catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// delete a comment by id
+router.delete('/:id', async (req, res) => {
+    try {
+        const commentToDelete = await Comment.findByPk(req.params.id) 
+        Comment.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });  
+
+        if(!commentToDelete) {
+            res.status(400).json({ message: 'No comment with this ID!' });
+            return;
+        }
+
+        res.status(200).json(commentToDelete); 
+    } 
+    
+    catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+module.exports = router;
