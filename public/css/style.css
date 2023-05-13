@@ -60,7 +60,6 @@ footer {
     height: 45%;
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     justify-content: space-around;
 }
@@ -83,4 +82,34 @@ footer {
     align-items: center;
 }
 
+/* Footer */ 
 
+.footer-main-parent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.git-btn-href {
+    height: 5vh;
+    width: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.github-icon {
+    font-size: 5vh;
+    color: lightgray;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: 1s ease-in-out;
+}
+  
+  .github-icon:hover {
+    font-size: 7.5vh;
+    color: rgb(106, 7, 7);
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
