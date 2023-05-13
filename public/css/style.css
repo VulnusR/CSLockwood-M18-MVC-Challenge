@@ -76,6 +76,11 @@ footer {
     height: 100%;
     width: 100%;
     background-color: brown;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
