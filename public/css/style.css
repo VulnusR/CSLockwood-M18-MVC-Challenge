@@ -123,3 +123,26 @@ footer {
     color: rgb(106, 7, 7);
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 }
+
+
+/* form */
+
+.form-main-parent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 9999; /* Adjust the z-index value as needed */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-main-parent.show {
+    display: block;
+    background-color: rgba(29, 28, 30, 0.607);
+}
+

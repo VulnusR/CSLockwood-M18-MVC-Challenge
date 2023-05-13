@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,500&family=Libre+Baskerville&display=swap" rel="stylesheet">
+        
+    
+        <script>
+          tailwind.config = { theme: { extend: { colors: { clifford: "#da373d", },
+          }, }, };
+        </script>
+
+        <style type="text/tailwindcss">
+            @layer components { 
+                .bg-primary {
+                    @apply bg-gradient-to-br from-purple-300 to-blue-400 via-cyan-200; 
+                } 
+                .bg-dark { 
+                    @apply bg-gradient-to-br from-purple-800 to-blue-800 via-cyan-800 
+                } 
+            };
+        </style>
+        <script src="/js/account-feature.js"></script>
+        <title>Vulnus's Blog</title>
+  </head>
+  
+  <body>
+    <header>
+    {{> header}}
+    
+  </header>
+    {{{body}}}
+    {{> form}}
+    <footer>
+    {{> footer}}
+  </footer>
+  </body>
+  
+
+  
+  
+  
+
+</html>

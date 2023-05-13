@@ -14,6 +14,8 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
+hbs.handlebars.registerPartial('form', '{{> form}}');
+
 const sess = {
   secret: 'Super secret secret',
   cookie: {
