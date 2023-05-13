@@ -8,35 +8,49 @@ class User extends Model {
   }
 };
 
-const User = sequelize.define('User', {
-  firstName: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  
-  lastName: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
+User.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
 
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
-  },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
 
-  username: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+        isStrongPassword(value) {
+          const regex = /^(?=.*\d)(?=.*[A-Z])/;
+          if (!regex.test(value)) {
+            throw new Error('The password must contain at least one capital letter and one number.');
+          }
+        },
+      },
+    },
   },
+)
 
-  password: {
-    type: DataTypes.STRING,  
-    allowNull: false,
-    unique: true,
-  },
-  
-});
+
+
+
+
 
 module.exports = User;
