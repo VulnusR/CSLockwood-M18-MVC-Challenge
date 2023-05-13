@@ -1,14 +1,25 @@
 const router = require('express').Router();
-const Routes = require('./routes');
 const homeRoutes = require('./homeRoutes.js');
 const dashboardRoutes = require('./dashRoutes');
 
-router.use('/', homeRoutes);
-router.use('/api', Routes);
-router.use('/dashboard', dashboardRoutes)
 
+// Home page route
+router.get('/', (req, res) => {
+  // Render the 'models/index.hbs' file as the response
+  res.render('index');
+});
+
+// Use other routes
+router.use('/home', homeRoutes);
+router.use('/dashboard', dashboardRoutes);
+
+// Invalid route
 router.use((req, res) => {
-    res.send("<h1>Invalid Route!</h1>")
+  res.send("<h1>Invalid Route!</h1>");
 });
 
 module.exports = router;
+
+
+
+
