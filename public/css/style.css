@@ -41,6 +41,10 @@ footer {
   
   .account-option {
     color: white;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 100;
+    font-size: .75rem; 
+    
   }
   
 .header-title-parent {
@@ -53,7 +57,10 @@ footer {
   
 .header-title {
     color: gold;
-    font-size: 2.5rem; /* Adjust the font size as needed */
+    font-size: 2.5rem; 
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
 }
   
 .header-menu-parent {
@@ -66,7 +73,10 @@ footer {
   
 .header-option {
     color: red;
-    font-size: 1.5rem; /* Adjust the font size as needed */
+    font-size: 1.5rem; 
+    font-family: 'EB Garamond', serif;
+    font-weight: 200;
+    
 }
 
 /* body */
