@@ -39,13 +39,13 @@ footer {
     padding-right: 2%;
 }
   
-  .account-option {
+.account-option {
     color: white;
     font-family: 'Libre Baskerville', serif;
     font-weight: 100;
     font-size: .75rem; 
     
-  }
+}
   
 .header-title-parent {
     height: 45%;
@@ -127,22 +127,41 @@ footer {
 
 /* form */
 
-.form-main-parent {
+
+.login-form {
+    height: 100vh;
+    width: 100vw;
+    background-color: pink;
+}
+.modal-container {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    display: none;
-    z-index: 9999; /* Adjust the z-index value as needed */
-
-    display: flex;
+    background-color: rgba(29, 28, 30, 0.607);
+    z-index: 9999;
     align-items: center;
     justify-content: center;
 }
-
-.form-main-parent.show {
-    display: block;
-    background-color: rgba(29, 28, 30, 0.607);
+  
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    height: 300px; 
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+.form-main-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 

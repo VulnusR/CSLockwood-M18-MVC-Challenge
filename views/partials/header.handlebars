@@ -1,17 +1,19 @@
 <div class="header-main-parent">
-        <div class="login-parent">
-            <button class="account-option" id="account-functionality">Account-Functionality</button>
+    <div class="login-parent">
+        {{#if logged_in}}
+            <a href="/logout">Logout</a>
+        {{else}}
+            <button class="account-option" id="account-functionality">Login</button>
+        {{/if}}
+    </div>
 
-        </div>
+    <div class="header-title-parent">
+        <h1 class="header-title">Vulnus's Blog</h1>
+    </div>
 
-        <div class="header-title-parent">
-            <h1 class="header-title">Vulnus's Blog</h1>
-
-        </div>
-
-        <div class="header-menu-parent">
-            <h4 class="header-option">Home</h4>
-            <h4 class="header-option">Dashboard</h4>
-        </div>
+    <div class="header-menu-parent">
+        <h4 class="header-option">Home</h4>
+        <h4 class="header-option">Dashboard</h4>
+    </div>
 </div>
-    
+
